@@ -116,11 +116,13 @@
     padding: 1rem;
 }
 
-.shopping-cart {
+.shopping-cart,
+.item-information {
     overflow: scroll;
 }
 
-.shopping-cart::-webkit-scrollbar {
+.shopping-cart::-webkit-scrollbar,
+.item-information::-webkit-scrollbar {
     display: none;
 }
 
