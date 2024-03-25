@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Noor Kitchen</title>
+
+        <!--CSS Files-->
+        <link rel="stylesheet" href="css/css/all.css">
+        <link rel="stylesheet" href="css/font-families.css">
+        <link rel="stylesheet" href="notification-box/notification_styles.css">
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/search.css">
+
+        <!--JS Files-->
+        <script src="notification-box/notification_funcs.js" defer></script>
+        <script src="js/search-section.js" defer></script>
+        <script src="js/search-controls.js" defer></script>
+    </head>
+    <body>
+        <p username hidden><%= username %></p>
+        <header>
+            <div class="logo">
+                <i class="fas fa-utensils"></i>
+                <span>Noor Kitchen</span>
+            </div>
+            <div class="header-icons">
+                <a href="/"><i class="fas fa-home home"></i></a>
+                <i class="fas fa-search search"></i>
+            </div>
+        </header>
+        <div class="items-search">
+            <i class="fas fa-times close-search-icon"></i>
+            <form action="user-search" method="POST" hidden>
+                <input username-field type="text" name="username">
+                <input item-field type="text" name="item">
+                <button send-search-button type="submit"></button>
+            </form>
+            <div>
+                <input item-search-field type="text" name="item" placeholder="Search...">
+                <button get-item-name-button style="background: none; outline: none; border: none" class="fas fa-search search-icon"></button>
+            </div>
+        </div>
+        <div class="sign-in-form">
+            <i class="fas fa-times close-sign-in-form"></i>
+            <div class="sign-in form">
+                <p class="form-text">Sign in</p>
+                <input type="text" placeholder="Username in here..." sign-in-username-field>
+                <input type="password" placeholder="Password in here..." sign-in-password-field>
+                <button sign-in-button>Sign in</button>
+                <p style="color: #FFF;">Don't have an account? <span create-account-span>Create one for free.</span></p>
+                <span recover-account-span>Forgot your password?</span>
+            </div>
+            <form action="shopping" method="POST" hidden>
+                <input id="current-username" type="text" name="username">
+                <button id="submit" type="submit"></button>
+            </form>
+            <div id="sign-up" class="sign-up form hidden">
+                <p class="form-text">Create an Account</p>
+                <input type="text" placeholder="Username in here..." sign-up-username-field>
+                <input type="password" placeholder="Password in here..." sign-up-password-field>
+                <input type="password" placeholder="Confirm your password..." confirm-password-field>
+                <input type="email" placeholder="Your working email in here..." sign-up-email-field>
+                <button sign-up-button>Sign up</button>
+                <p style="color: #FFF;">Already have an account? <span sign-in-span>Sign in.</span></p>
+            </div>
+            <div class="recover-account form hidden">
+                <p class="form-text">Account Recovery</p>
+                <input type="email" placeholder="Your registered email in here..." account-recovery-email-field>
+                <button account-recovery-button>Send</button>
+            </div>
+        </div>
+        <section>
+            <p class="section-heading">Search Results</p>
+            <div class="section-content">
+                <% if (result) { %>
+                    <p class="search-reply">Item found</p>
+                    <div class="item">
+                        <p image-src hidden><%= result.itemImage %></p>
+                        <img item-image src="" alt="">
+                        <div>
+                            <p class="item-name"><%= result.itemName %></p>
+                            <p>Item type: <%= result.itemType %></p>
+                            <p>Price: $<%= result.itemPrice %></p>
+                            <% if (result.remaining > 0) { %>
+                                <p>Status: Available</p>
+                                </div>
+                                <div>
+                                    <button class="buy-item-button">Buy</button>
+                                </div>
+                            <% } else { %>
+                                <p>Status: Unvailable</p>
+                                </div>
+                                <div>
+                                    <p>Sorry, this item is currently unavailable.</p>
+                                </div>
+                            <% } %>
+                    </div>
+                <% } else { %>
+                    <p class="search-reply">Sorry, there is no item that matches your search. Check your
+                        spelling or try a different item. Thank you for visiting Noor Kitchen.
+                    </p>
+                <% } %>
+            </div>
+        </section>
+        <p style="margin: 2rem; font-size: 0.7rem; text-align: center;">&copy; 2024 Noor Kitchen. All rights reserved.</p>
+    </body>
+</html>

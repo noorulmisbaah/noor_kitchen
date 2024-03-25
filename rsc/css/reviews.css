@@ -1,0 +1,119 @@
+:root {
+    --orange: #FFBB00;
+    --white: #FFFFFF;
+    --silver: #C0C0C0;
+    --gray: #808080;
+    --dark-transparent: #000000E0;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 20px;
+    font-family: Nunito, Verdana;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 4rem 0;
+}
+
+.section-content {
+    padding: 2rem 5rem;
+}
+
+.reviews {
+    border-bottom: 1px solid var(--orange);
+}
+
+.review {
+    padding: 1rem;
+    margin: 1rem 0;
+    border: 1px solid var(--gray);
+    border-radius: 5px;
+    background: var(--silver);
+    box-shadow: 0 0 5px 2px var(--gray);
+}
+
+.review .review-head {
+    margin-bottom: 1rem;
+}
+
+.review .review-author {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--orange);
+}
+
+.review .review-date {
+    font-weight: bold;
+}
+
+.comment-section button,
+.comment-form button {
+    background: var(--orange);
+    color: var(--white);
+    font-family: Poppins, Verdana;
+    outline: none;
+    border: 1px solid var(--orange);
+    border-radius: 5px;
+    padding: 0.3rem 0.5rem;
+    transition: 0.5s linear all;
+    cursor: pointer;
+}
+
+.comment-section button i {
+    color: var(--silver);
+    margin-right: 0.5rem;
+}
+
+.comment-section button:hover,
+.comment-form button:hover {
+    background: var(--white);
+    color: var(--orange);
+}
+
+.comment-form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.comment-form textarea {
+    resize: none;
+    height: 13rem;
+    padding: 1rem;
+    font-family: Poppins;
+    color: var(--white);
+    background: none;
+    outline: none;
+    border: none;
+    border-top: 1px solid var(--white);
+    border-bottom: 1px solid var(--white);
+}
+
+.close-comment-section {
+    position: fixed;
+    top: 1rem;
+    left: calc(100% - 5rem);
+}
+
+@media screen and (max-width: 600px) {
+    .section-content {
+        padding: 2rem;
+    }
+}
+
+@media screen and (max-width: 470px) {
+    .section-content {
+        padding: 1rem;
+    }
+
+    .review .review-author {
+        font-size: 1.2rem;
+    }
+}

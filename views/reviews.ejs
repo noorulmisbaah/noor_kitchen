@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Noor Kitchen</title>
+
+        <!--CSS Files-->
+        <link rel="stylesheet" href="css/css/all.css">
+        <link rel="stylesheet" href="css/font-families.css">
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/reviews.css">
+        <link rel="stylesheet" href="notification-box/notification_styles.css">
+
+        <!--JS Files-->
+        <script defer src="js/search-controls.js"></script>
+        <script defer src="js/sign-in-controls.js"></script>
+        <script defer src="js/comments-controls.js"></script>
+        <script src="notification-box/notification_funcs.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <i class="fas fa-utensils"></i>
+                <span>Noor Kitchen</span>
+            </div>
+            <div class="header-icons">
+                <a href="/"><i class="fas fa-home home"></i></a>
+                <i class="fas fa-search search"></i>
+                <i class="fas fa-user sign"></i>
+            </div>
+        </header>
+        <div class="items-search">
+            <i class="fas fa-times close-search-icon"></i>
+            <form action="search" method="POST">
+                <input type="text" name="item" placeholder="Search..." required>
+                <button style="background: none; outline: none; border: none" type="submit" class="fas fa-search search-icon"></button>
+            </form>
+        </div>
+        <div class="sign-in-form">
+            <i class="fas fa-times close-sign-in-form"></i>
+            <div class="sign-in form">
+                <p class="form-text">Sign in</p>
+                <input type="text" placeholder="Username in here..." sign-in-username-field>
+                <input type="password" placeholder="Password in here..." sign-in-password-field>
+                <button sign-in-button>Sign in</button>
+                <p style="color: #FFF;">Don't have an account? <span create-account-span>Create one for free.</span></p>
+                <span recover-account-span>Forgot your password?</span>
+            </div>
+            <form action="shopping" method="POST" hidden>
+                <input id="current-username" type="text" name="username">
+                <button id="submit" type="submit"></button>
+            </form>
+            <div id="sign-up" class="sign-up form hidden">
+                <p class="form-text">Create an Account</p>
+                <input type="text" placeholder="Username in here..." sign-up-username-field>
+                <input type="password" placeholder="Password in here..." sign-up-password-field>
+                <input type="password" placeholder="Confirm your password..." confirm-password-field>
+                <input type="email" placeholder="Your working email in here..." sign-up-email-field>
+                <button sign-up-button>Sign up</button>
+                <p style="color: #FFF;">Already have an account? <span sign-in-span>Sign in.</span></p>
+            </div>
+            <div class="recover-account form hidden">
+                <p class="form-text">Account Recovery</p>
+                <input type="email" placeholder="Your registered email in here..." account-recovery-email-field>
+                <button account-recovery-button>Send</button>
+            </div>
+        </div>
+        <section>
+            <div class="section-content">
+                <p class="section-heading">Comments</p>
+                <div class="reviews">
+                    <% if (reviews.length < 1) { %>
+                        <p class="review-status">There are comments to display. Why not make one?</p>
+                    <% } else {
+                        reviews.forEach(review => { %>
+                            <div class="review">
+                                <div class="review-head">
+                                    <p class="review-author"><%= review.author %></p>
+                                    <p class="review-date"><%= review.date %></p>
+                                </div>
+                                <p class="review-content"><%= review.comment %> Lorem ipsum dolor sit amet.</p>
+                            </div>
+                        <% })
+                    } %>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="section-content comment-section">
+                <p class="section-heading">Make Your Comment</p>
+                <button open-comments-section-button><i class="fas fa-comment"></i>Make a Comment</button>
+            </div>
+            <div class="comment-area">
+                <i class="fas fa-times close-comment-section"></i>
+                <div class="comment-form">
+                    <p class="form-text">Make Your Comment</p>
+                    <input type="text" placeholder="Your name here..." comment-author-field>
+                    <textarea comment-content-field placeholder="Enter your comment..."></textarea>
+                    <button post-comment-button>Post Comment</button>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

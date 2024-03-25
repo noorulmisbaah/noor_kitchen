@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Noor Kitchen</title>
+
+        <!--CSS Files-->
+        <link rel="stylesheet" href="css/font-families.css">
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/css/all.css">
+        <link rel="stylesheet" href="css/administrator.css">
+
+        <!--JS Files-->
+        <script src="js/administrator.js" defer></script>
+        <script src="js/search-controls.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <i class="fas fa-utensils"></i>
+                <span>Noor Kitchen</span>
+            </div>
+            <div class="header-icons">
+                <i class="fas fa-bars menu-icon"></i>
+                <span class="fas fa-times close-side-icon"></span>
+                <i class="fas fa-home home-icon"></i>
+                <i class="fas fa-search search"></i>
+            </div>
+        </header>
+        <div class="items-search">
+            <i class="fas fa-times close-search-icon"></i>
+            <div>
+                <input type="text" class="search-input" placeholder="Search...">
+                <i class="fas fa-search search-icon"></i>
+            </div>
+        </div>
+        <div class="page-layout">
+            <div class="left-part">
+                <div class="user-image">
+                    <i class="fas fa-user user"></i>
+                </div>
+                <div class="items">
+                    <div class="item">
+                        <i class="fas fa-upload"></i>
+                        <p>Upload a New Item</p>
+                    </div>
+                    <div class="item">
+                        <i class="fas fa-sync"></i>
+                        <p>Update an Item</p>
+                    </div>
+                    <div class="item">
+                        <i class="fas fa-trash"></i>
+                        <p>Remove an Item</p>
+                    </div>
+                    <div class="item">
+                        <i class="fas fa-shopping-bag"></i>
+                        <p>Shopping Area</p>
+                    </div>
+                    <div class="item">
+                        <i class="fas fa-envelope"></i>
+                        <p>Messages</p>
+                    </div>
+                </div>
+            </div>
+            <div class="right-part">
+                <div class="boxes">
+                    <div class="box">
+                        <p class="box-title">All Items</p>
+                        <p class="box-description">21</p>
+                    </div>
+                    <div class="box">
+                        <p class="box-title">All Users</p>
+                        <p class="box-description">11</p>
+                    </div>
+                    <div class="box">
+                        <p class="box-title">All Items</p>
+                        <p class="box-description">6</p>
+                    </div>
+                </div>
+                <div class="sections">
+                    <div class="section">
+                        <p class="section-title">Upload a New Item</p>
+                        <div class="section-area">
+                            <form action="upload_item" method="POST" enctype="multipart/form-data">
+                                <label for="item-name">Item name:</label>
+                                <input type="text" placeholder="Enter the item name..." name="itemName" required>
+                                <label for="item-type">Item type:</label>
+                                <input type="text" placeholder="Enter the item type..." name="itemType" required>
+                                <label for="item-price">Item price</label>
+                                <input type="number" placeholder="Enter the item price..." name="itemPrice" required>
+                                <label for="item-quantity">Item quantity:</label>
+                                <input type="number" placeholder="Enter the item quantity..." name="itemQuantity" required>
+                                <label for="item-image">Item image:</label>
+                                <input type="file" accept=".png, .jpg" readonly>
+                                <button type="submit">Upload</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <p class="section-title">Update an Item</p>
+                        <div class="section-area">
+                            <form action="update_item_information" method="POST" enctype="multipart/form-data">
+                                <label for="item-name">Item old name:</label>
+                                <input type="text" placeholder="Enter the item name..." name="itemOldName" required>
+                                <label for="item-type">Item new name:</label>
+                                <input type="text" placeholder="Enter the item type..." name="itemNewType" required>
+                                <label for="item-price">Item price</label>
+                                <input type="number" placeholder="Enter the item price..." name="itemPrice">
+                                <label for="item-quantity">Item quantity:</label>
+                                <input type="number" placeholder="Enter the item quantity..." name="itemQuantity">
+                                <label for="item-image">Item image:</label>
+                                <input type="file" accept=".png, .jpg">
+                                <button type="submit">Update</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <p class="section-title">Remove an Item</p>
+                        <div class="section-area">
+                            <form action="remove_item" method="POST" enctype="multipart/form-data">
+                                <label for="item-name">Item name:</label>
+                                <input type="text" placeholder="Enter the item name..." name="itemOldName" required>
+                                <button type="submit">Remove</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <p class="section-title">Shopping Area</p>
+                        <div class="section-area">
+
+                        </div>
+                    </div>
+                    <div class="section">
+                        <p class="section-title">Messages</p>
+                        <div class="section-area">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

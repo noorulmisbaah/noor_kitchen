@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Noor Kitchen</title>
+
+        <!--CSS Files-->
+        <link rel="stylesheet" href="css/font-families.css">
+        <link rel="stylesheet" href="css/css/all.css">
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/shopping-area.css">
+        <link rel="stylesheet" href="notification-box/notification_styles.css">
+
+        <!--JS Files-->
+        <script src="js/jspdf.min.js" defer></script>
+        <script src="js/jspdf.plugin.autotable.min.js" defer></script>
+        <script src="js/logo-uri.js" defer></script>
+        <script src="js/Poppins-Bold-normal.js" defer></script>
+        <script src="js/Poppins-Regular-normal.js" defer></script>
+        <script src="js/search-controls.js" defer></script>
+        <script src="js/shopping-area.js" defer></script>
+        <script src="js/reciept-download.js" defer></script>
+        <script src="notification-box/notification_funcs.js" defer></script>
+    </head>
+    <body>
+        <p username hidden><%= username %></p>
+        <header>
+            <div class="logo">
+                <i class="fas fa-utensils"></i>
+                <span>Noor Kitchen</span>
+            </div>
+            <div class="header-icons">
+                <a href="/"><i class="fas fa-home home"></i></a>
+                <i class="fas fa-shopping-cart cart"></i>
+                <i class="fas fa-info dashboard-button"></i>
+                <form action="customer" method="POST" hidden>
+                    <input customer-name-field type="input" name="username">
+                    <button send-customer-name type="submit"></button>
+                </form>
+            </div>
+        </header>
+        <i class="fas fa-search search"></i>
+        <div class="items-search">
+            <i class="fas fa-times close-search-icon"></i>
+            <form action="user-search" method="POST" hidden>
+                <input username-field type="text" name="username">
+                <input item-field type="text" name="item">
+                <button send-search-button type="submit"></button>
+            </form>
+            <div>
+                <input item-search-field type="text" name="item" placeholder="Search...">
+                <button get-item-name-button style="background: none; outline: none; border: none" class="fas fa-search search-icon"></button>
+            </div>
+        </div>
+        <section>
+            <p class="section-heading">Shopping Area</p>
+            <div class="section-content items">
+                <% products.forEach(product => { %>
+                    <div class="item">
+                        <p item-image-source hidden><%= product.itemImage %></p>
+                        <p item-availability hidden><%= product.isAvailable %></p>
+                        <p item-remaining hidden><%= product.remaining %></p>
+                        <p item-description hidden><%= product.itemDescription %></p>
+                        <img class="item-image" src="" alt="Item image">
+                        <p item-name class="item-title"><%= product.itemName %></p>
+                        <p>$<span item-price><%= product.itemPrice %></span></p>
+                        <div item-buttons>
+                            <button more-info-button>More Info</button>
+                            <% if (product.remaining !== 0) { %>
+                                <button add-to-cart-button>Add to Cart</button>
+                            <% } %>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        </section>
+        <section class="item-information">
+            <i class="fas fa-times close-information"></i>
+            <div class="information">
+
+            </div>
+        </section>
+        <section class="shopping-cart">
+            <div heading></div>
+            <i class="fas fa-times close-cart-area"></i>
+            <div class="section-content cart-items">
+
+            </div>
+        </section>
+        <section>
+            <p page hidden><%= page %></p>
+            <p pages hidden><%= pages %></p>
+            <div class="page-numbers">
+                
+            </div>
+            <form action="shopping" method="POST" hidden>
+                <input type="text" name="page" page-field>
+                <button type="submit" submit-page-number></button>
+            </form>
+        </section>
+        <p style="margin: 2rem; font-size: 0.7rem; text-align: center;">&copy; 2024 Noor Kitchen. All rights reserved.</p>
+    </body>
+</html>

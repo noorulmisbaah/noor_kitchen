@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Noor Kitchen</title>
+
+        <!--CSS Files-->
+        <link rel="stylesheet" href="css/css/all.css">
+        <link rel="stylesheet" href="css/font-families">
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/slide-show.css">
+        <link rel="stylesheet" href="css/cards.css">
+        <link rel="stylesheet" href="notification-box/notification_styles.css">
+
+        <!--JS Files-->
+        <script src="js/index.js" defer></script>
+        <script src="js/menu-controls.js" defer></script>
+        <script src="js/search-controls.js" defer></script>
+        <script src="js/sign-in-controls.js" defer></script>
+        <script src="js/slide-show.js" defer></script>
+        <script src="notification-box/notification_funcs.js" defer></script>
+    </head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fas fa-utensils"></i>
+            <span>Noor Kitchen</span>
+        </div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="reviews">Reviews</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="header-icons">
+            <i class="fas fa-search search"></i>
+            <i class="fas fa-user sign"></i>
+            <i class="fas fa-bars menu-icon"></i>
+        </div>
+    </header>
+    <div class="full-menu">
+        <i class="fas fa-times close-menu-icon"></i>
+        <a href="#home"><i class="fas fa-home nav-icon"></i>Home</a>
+        <a href="#about"><i class="fas fa-info nav-icon"></i>About</a>
+        <a href="#services"><i class="fas fa-bolt nav-icon"></i>Services</a>
+        <a href="reviews"><i class="fas fa-comment nav-icon"></i>Reviews</a>
+        <a href="#contact"><i class="fas fa-envelope nav-icon"></i>Contact</a>
+    </div>
+    <div class="items-search">
+        <i class="fas fa-times close-search-icon"></i>
+        <form action="search" method="POST">
+            <input type="text" name="item" placeholder="Search..." required>
+            <button style="background: none; outline: none; border: none" type="submit" class="fas fa-search search-icon"></button>
+        </form>
+    </div>
+    <div class="sign-in-form">
+        <i class="fas fa-times close-sign-in-form"></i>
+        <div class="sign-in form">
+            <p class="form-text">Sign in</p>
+            <input type="text" placeholder="Username in here..." sign-in-username-field>
+            <input type="password" placeholder="Password in here..." sign-in-password-field>
+            <button sign-in-button>Sign in</button>
+            <p style="color: #FFF;">Don't have an account? <span create-account-span>Create one for free.</span></p>
+            <span recover-account-span>Forgot your password?</span>
+        </div>
+        <form action="shopping" method="POST" hidden>
+            <input id="current-username" type="text" name="username">
+            <button id="submit" type="submit"></button>
+        </form>
+        <div id="sign-up" class="sign-up form hidden">
+            <p class="form-text">Create an Account</p>
+            <input type="text" placeholder="Username in here..." sign-up-username-field>
+            <input type="password" placeholder="Password in here..." sign-up-password-field>
+            <input type="password" placeholder="Confirm your password..." confirm-password-field>
+            <input type="email" placeholder="Your working email in here..." sign-up-email-field>
+            <button sign-up-button>Sign up</button>
+            <p style="color: #FFF;">Already have an account? <span sign-in-span>Sign in.</span></p>
+        </div>
+        <div class="recover-account form hidden">
+            <p class="form-text">Account Recovery</p>
+            <input type="email" placeholder="Your registered email in here..." account-recovery-email-field>
+            <button account-recovery-button>Send</button>
+        </div>
+    </div>
+    <section>
+        <div class="cover-image">
+            <p class="cover-image-text">Welcome to Noor Kitchen!</p>
+            <p class="cover-image-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, provident.</p>
+        </div>
+    </section>
+    <section id="home">
+        <div class="section-content">
+            <p class="section-heading">Welcome to Noor Kitchen</p>
+            <div class="slide-show section-column">
+                <div class="slide-show-text">
+                    <p class="title">Best Dishes</p>
+                    <p class="column-text">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est expedita quaerat, 
+                        reprehenderit iure mollitia dignissimos libero illo consectetur velit distinctio.
+                        Lorem ipsum dolor sit amet.
+                    </p>
+                </div>
+                <div class="slide-show-image">
+                    <img src="imgs/products/fried rice.png" alt="fried-rice">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="about">
+        <div class="section-content">
+            <p class="section-heading">About Us</p>
+            <div class="section-column">
+                <div class="icon-place">
+                    <i class="fas fa-thumbs-up icon"></i>
+                </div>
+                <div>
+                    <p class="title">We're Among The Best</p>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est expedita quaerat, 
+                        reprehenderit iure mollitia dignissimos libero illo consectetur velit distinctio.
+                        Lorem ipsum dolor sit amet.
+                    </p>
+                </div>
+            </div>
+            <div class="section-column">
+                <div>
+                    <p class="title">We Offer Delivery</p>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est expedita quaerat, 
+                        reprehenderit iure mollitia dignissimos libero illo consectetur velit distinctio.
+                        Lorem ipsum dolor sit amet.
+                    </p>
+                </div>
+                <div class="icon-place">
+                    <i class="fas fa-bus icon"></i>
+                </div>
+            </div>
+            <div class="section-column">
+                <div class="icon-place">
+                    <i class="fas fa-handshake icon"></i>
+                </div>
+                <div>
+                    <p class="title">We are Friendly</p>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est expedita quaerat, 
+                        reprehenderit iure mollitia dignissimos libero illo consectetur velit distinctio.
+                        Lorem ipsum dolor sit amet.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="services">
+        <div class="section-content">
+            <p class="section-heading">Our Services</p>
+            <div class="cards">
+                <div class="card">
+                    <img src="imgs/products/lunch dishes.png" alt="Dishes" class="card-image">
+                    <p class="card-title">Delicious Dishes</p>
+                    <p class="card-description">We serve you with the most delicious dishes.</p>
+                </div>
+                <div class="card">
+                    <img src="imgs/products/meat pie.png" alt="Meat pie" class="card-image">
+                    <p class="card-title">Refreshing Snacks</p>
+                    <p class="card-description">Our snacks are mouth-melting. You don't want to miss them.</p>
+                </div>
+                <div class="card">
+                    <img src="imgs/products/ice cream cake.png" alt="Ice cream acke" class="card-image">
+                    <p class="card-title">Sweet Desserts</p>
+                    <p class="card-description">Try our sweet desserts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="section-content">
+            <p class="section-heading">Samples</p>
+            <div class="cards">
+                <div class="card">
+                    <img src="imgs/products/spicy spaghetti.png" alt="Spaghetti" class="card-image">
+                    <p class="card-title">Spicy Spaghetti</p>
+                    <p class="card-description">Lorem ipsum dolor sit amet.</p>
+                </div>
+                <div class="card">
+                    <img src="imgs/products/chocolate doughnuts.png" alt="Doughnuts" class="card-image">
+                    <p class="card-title">Chocolate Doughnuts</p>
+                    <p class="card-description">Lorem ipsum dolor sit amet.</p>
+                </div>
+                <div class="card">
+                    <img src="imgs/products/meat pie.png" alt="Meat pie" class="card-image">
+                    <p class="card-title">Meat pie</p>
+                    <p class="card-description">Lorem ipsum dolor sit amet.</p>
+                </div>
+                <div class="card">
+                    <img src="imgs/products/chocolate delight.png" alt="Delight" class="card-image">
+                    <p class="card-title">Chocolate Delight</p>
+                    <p class="card-description">Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <div class="section-content">
+            <p class="section-heading">Contact Us</p>
+            <p>Have questions, suggessions, or complaints? Tell us what you feel about Noor Kitchen.</p>
+            <div class="contact-form">
+                <input type="text" placeholder="Your name..." contact-username-field>
+                <input type="email" placeholder="Your email..." contact-email-field>
+                <textarea contact-textarea></textarea>
+                <button send-suggession-button>Send</button>
+                <p>You can send us an email via aminunawwarah@gmail.com.</p>
+            </div>
+        </div>
+    </section>
+    <p style="margin-bottom: 2rem; font-size: 0.7rem; text-align: center;">&copy; 2024 Noor Kitchen. All rights reserved.</p>
+</body>
+</html>
