@@ -13,9 +13,15 @@
         <link rel="stylesheet" href="css/search.css">
 
         <!--JS Files-->
+        <script src="js/jspdf.min.js" defer></script>
+        <script src="js/jspdf.plugin.autotable.min.js" defer></script>
+        <script src="js/logo-uri.js" defer></script>
+        <script src="js/Poppins-Bold-normal.js" defer></script>
+        <script src="js/Poppins-Regular-normal.js" defer></script>
         <script src="notification-box/notification_funcs.js" defer></script>
         <script src="js/search-section.js" defer></script>
         <script src="js/search-controls.js" defer></script>
+        <script src="js/receipt-download.js" defer></script>
     </head>
     <body>
         <p username hidden><%= username %></p>
@@ -35,7 +41,7 @@
                 <input username-field type="text" name="username">
                 <input item-field type="text" name="item">
                 <button send-search-button type="submit"></button>
-            </form>
+            </form> 
             <div>
                 <input item-search-field type="text" name="item" placeholder="Search...">
                 <button get-item-name-button style="background: none; outline: none; border: none" class="fas fa-search search-icon"></button>
@@ -81,13 +87,17 @@
                         <div>
                             <p class="item-name"><%= result.itemName %></p>
                             <p>Item type: <%= result.itemType %></p>
-                            <p>Price: $<%= result.itemPrice %></p>
+                            <p>Price: $<span class="item-price"><%= result.itemPrice %></span></p>
                             <% if (result.remaining > 0) { %>
                                 <p>Status: Available</p>
+                                <p>Remaining in stock: <span class="remaining-quantity"><%= result.remaining %></span></p>
+                                <p>Quantity selected: <span class="selected-quantity">1</span></p>
                                 </div>
                                 <div>
-                                    <button class="buy-item-button">Buy</button>
+                                    <button class="modifier increase">+</button>
+                                    <button class="modifier decrease">-</button>
                                 </div>
+                                <button class="buy-item-button">Buy</button>
                             <% } else { %>
                                 <p>Status: Unvailable</p>
                                 </div>

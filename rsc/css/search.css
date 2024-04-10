@@ -20,6 +20,32 @@
     color: var(--white);
 }
 
+button {
+    background: var(--orange);
+    padding: 0.3rem;
+    color: var(--light);
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid var(--orange);
+    font-family: inherit;
+    cursor: pointer;
+    transition: 0.5s linear all;
+}
+
+button:hover,
+.buy-item-button:hover {
+    background: var(--white);
+    color: var(--orange);
+}
+
+.modifier {
+    width: 2rem;
+}
+
+.buy-item-button {
+    width: 5rem;
+}
+
 .search-reply {
     font-size: 1.2rem;
     font-weight: bold;
@@ -44,24 +70,6 @@
     font-weight: bold;
 }
 
-.buy-item-button {
-    padding: 0.3rem;
-    width: 5rem;
-    background: var(--orange);
-    color: var(--light);
-    outline: none;
-    border-radius: 5px;
-    border: 1px solid var(--orange);
-    font-family: inherit;
-    cursor: pointer;
-    transition: 0.5s linear all;
-}
-
-.buy-item-button:hover {
-    background: var(--white);
-    color: var(--orange);
-}
-
 @media screen and (max-width: 768px) {
     .item {
         width: 17rem;
@@ -75,5 +83,8 @@
 @media screen and (max-width: 470px) {
     .item {
         width: 100%;
+    }
+    input {
+        width: 15rem;
     }
 }

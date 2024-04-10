@@ -10,20 +10,22 @@
     display: flex;
     flex-direction: column;
     width: 13rem;
-    align-items: center;
-    padding: 2rem;
+    max-height: 15rem;
+    padding: 1rem;
     background: #C0C0C0;
     border-radius: 5px;
     box-shadow: 0 0 10px 2px #141414;
 }
 
 .card img {
-    width: 10rem;
-    height: 10rem;
+    width: 7rem;
+    height: 7rem;
     margin-bottom: 1rem;
+    align-self: center;
 }
 
 .card .card-title {
+    text-align: center;
     font-size: 1.2rem;
     font-weight: bold;
 }
@@ -35,6 +37,8 @@
 
     .card {
         width: 100%;
+        max-height: 20rem;
+        align-self: center
     }
 
     .card img {

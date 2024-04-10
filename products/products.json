@@ -1,178 +1,178 @@
 [
-    {
-        "itemName": "Chocolate Cake",
-        "itemType": "Dessert",
-        "itemDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, deserunt.",
-        "itemPrice": 9.5,
-        "itemImage": "imgs/products/chocolate cake.png",
-        "remaining": 5
-    },
-    {
-        "itemName": "Chocolate Cheesecake",
-        "itemType": "Dessert",
-        "itemDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, deserunt.",
-        "itemPrice": 5,
-        "itemImage": "imgs/products/chocolate cheesecake.png",
-        "remaining": 0
-    },
-    {
-        "itemName": "Chocolate Doughnuts",
-        "itemType": "Snack",
-        "itemDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, deserunt.",
-        "itemPrice": 8,
-        "itemImage": "imgs/products/chocolate doughnuts.png",
-        "remaining": 9
-    },
-    {
-        "itemName": "Chocolate Mousse",
-        "itemType": "Dessert",
-        "itemDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, deserunt.",
-        "itemPrice": 5,
-        "itemImage": "imgs/products/chocolate mousse.png",
-        "remaining": 9
-    },
-    {
-        "itemName": "Creamy Doughnuts",
-        "itemType": "Dessert",
-        "itemDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, deserunt.",
-        "itemPrice": 10,
-        "itemImage": "imgs/products/creamy doughnuts.png",
-        "remaining": 7
-    },
-    {
-        "itemName": "French Fries",
-        "itemType": "Dish",
-        "itemDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, deserunt.",
-        "itemPrice": 8,
-        "itemImage": "imgs/products/french fries.png",
-        "remaining": 0
-    },
-    {
-        "itemName": "Ham and Mushrooms",
-        "itemType": "Dish",
-        "itemDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, deserunt.",
-        "itemPrice": 12,
-        "itemImage": "imgs/products/ham and mushrooms.png",
-        "remaining": 8
-    },
-    {
-        "itemName": "Ice-cream Cake",
-        "itemType": "Dessert",
-        "itemDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, deserunt.",
-        "itemPrice": 12,
-        "itemImage": "imgs/products/ice cream cake.png",
-        "remaining": 8
-    },
-    {
-        "itemName": "Kolkata Egg Rolls",
-        "itemType": "Snack",
-        "itemDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, deserunt.",
-        "itemPrice": 12,
-        "itemImage": "imgs/products/kolkata egg rolls.png",
-        "remaining": 8
-    },
-    {
-        "itemName": "Meat Pie",
-        "itemType": "Snack",
-        "itemDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, deserunt.",
-        "itemPrice": 12,
-        "itemImage": "imgs/products/meat pie.png",
-        "remaining": 8
-    },
-    {
-        "itemName": "Pasta",
-        "itemType": "Dish",
-        "itemDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, deserunt.",
-        "itemPrice": 12,
-        "itemImage": "imgs/products/pasta.png",
-        "remaining": 8
-    },
-    {
-        "itemName": "Rice Cover Spring Rolls",
-        "itemType": "Snack",
-        "itemDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, deserunt.",
-        "itemPrice": 12,
-        "itemImage": "imgs/products/rice cover spring rolls.png",
-        "remaining": 8
-    },
-    {
-        "itemName": "Rice with Egg Stew",
-        "itemType": "Dish",
-        "itemDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, deserunt.",
-        "itemPrice": 12,
-        "itemImage": "imgs/products/rice with egg stew.png",
-        "remaining": 8
-    },
-    {
-        "itemName": "Rice with Plantain",
-        "itemType": "Dish",
-        "itemDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, deserunt.",
-        "itemPrice": 12,
-        "itemImage": "imgs/products/rice with plantain.png",
-        "remaining": 8
-    },
-    {
-        "itemName": "Spaghetti with Stew",
-        "itemType": "Dish",
-        "itemDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, deserunt.",
-        "itemPrice": 12,
-        "itemImage": "imgs/products/spaghetti with stew.png",
-        "remaining": 0
-    },
-    {
-        "itemName": "Samosas",
-        "itemType": "Snack",
-        "itemDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, deserunt.",
-        "itemPrice": 12,
-        "itemImage": "imgs/products/samosas.png",
-        "remaining": 8
-    },
-    {
-        "itemName": "Spicy Pasta",
-        "itemType": "Dish",
-        "itemDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, deserunt.",
-        "itemPrice": 12,
-        "itemImage": "imgs/products/spicy pasta.png",
-        "remaining": 8
-    },
-    {
-        "itemName": "Spicy Spaghetti",
-        "itemType": "Dish",
-        "itemDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, deserunt.",
-        "itemPrice": 12,
-        "itemImage": "imgs/products/spicy spaghetti.png",
-        "remaining": 0
-    },
-    {
-        "itemName": "Sponge Cake",
-        "itemType": "Snack",
-        "itemDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, deserunt.",
-        "itemPrice": 12,
-        "itemImage": "imgs/products/sponge cake.png",
-        "remaining": 8
-    },
-    {
-        "itemName": "Strawberry Sponge Cake",
-        "itemType": "Snack",
-        "itemDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, deserunt.",
-        "itemPrice": 12,
-        "itemImage": "imgs/products/strawberry sponge cake.png",
-        "remaining": 8
-    },
-    {
-        "itemName": "Strawberry Cake",
-        "itemType": "Snack",
-        "itemDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, deserunt.",
-        "itemPrice": 12,
-        "itemImage": "imgs/products/strawberry cake.png",
-        "remaining": 8
-    },
-    {
-        "itemName": "Vietnamese Egg Roll",
-        "itemType": "Snack",
-        "itemDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, deserunt.",
-        "itemPrice": 12,
-        "itemImage": "imgs/products/vietnamese egg roll.png",
-        "remaining": 0
-    }
+	{
+		"itemName": "Chocolate Cake",
+		"itemType": "Dessert",
+		"itemDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, deserunt.",
+		"itemPrice": 9.5,
+		"itemImage": "imgs/products/chocolate cake.png",
+		"remaining": 4
+	},
+	{
+		"itemName": "Chocolate Cheesecake",
+		"itemType": "Dessert",
+		"itemDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, deserunt.",
+		"itemPrice": 5,
+		"itemImage": "imgs/products/chocolate cheesecake.png",
+		"remaining": 0
+	},
+	{
+		"itemName": "Chocolate Doughnuts",
+		"itemType": "Snack",
+		"itemDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, deserunt.",
+		"itemPrice": 8,
+		"itemImage": "imgs/products/chocolate doughnuts.png",
+		"remaining": 0
+	},
+	{
+		"itemName": "Chocolate Mousse",
+		"itemType": "Dessert",
+		"itemDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, deserunt.",
+		"itemPrice": 5,
+		"itemImage": "imgs/products/chocolate mousse.png",
+		"remaining": 7
+	},
+	{
+		"itemName": "Creamy Doughnuts",
+		"itemType": "Dessert",
+		"itemDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, deserunt.",
+		"itemPrice": 10,
+		"itemImage": "imgs/products/creamy doughnuts.png",
+		"remaining": 1
+	},
+	{
+		"itemName": "French Fries",
+		"itemType": "Dish",
+		"itemDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, deserunt.",
+		"itemPrice": 8,
+		"itemImage": "imgs/products/french fries.png",
+		"remaining": 0
+	},
+	{
+		"itemName": "Ham and Mushrooms",
+		"itemType": "Dish",
+		"itemDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, deserunt.",
+		"itemPrice": 12,
+		"itemImage": "imgs/products/ham and mushrooms.png",
+		"remaining": 8
+	},
+	{
+		"itemName": "Ice-cream Cake",
+		"itemType": "Dessert",
+		"itemDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, deserunt.",
+		"itemPrice": 12,
+		"itemImage": "imgs/products/ice cream cake.png",
+		"remaining": 0
+	},
+	{
+		"itemName": "Kolkata Egg Rolls",
+		"itemType": "Snack",
+		"itemDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, deserunt.",
+		"itemPrice": 12,
+		"itemImage": "imgs/products/kolkata egg rolls.png",
+		"remaining": 5
+	},
+	{
+		"itemName": "Meat Pie",
+		"itemType": "Snack",
+		"itemDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, deserunt.",
+		"itemPrice": 12,
+		"itemImage": "imgs/products/meat pie.png",
+		"remaining": 0
+	},
+	{
+		"itemName": "Pasta",
+		"itemType": "Dish",
+		"itemDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, deserunt.",
+		"itemPrice": 12,
+		"itemImage": "imgs/products/pasta.png",
+		"remaining": 6
+	},
+	{
+		"itemName": "Rice Cover Spring Rolls",
+		"itemType": "Snack",
+		"itemDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, deserunt.",
+		"itemPrice": 12,
+		"itemImage": "imgs/products/rice cover spring rolls.png",
+		"remaining": 8
+	},
+	{
+		"itemName": "Rice with Egg Stew",
+		"itemType": "Dish",
+		"itemDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, deserunt.",
+		"itemPrice": 12,
+		"itemImage": "imgs/products/rice with egg stew.png",
+		"remaining": 7
+	},
+	{
+		"itemName": "Rice with Plantain",
+		"itemType": "Dish",
+		"itemDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, deserunt.",
+		"itemPrice": 12,
+		"itemImage": "imgs/products/rice with plantain.png",
+		"remaining": 7
+	},
+	{
+		"itemName": "Spaghetti with Stew",
+		"itemType": "Dish",
+		"itemDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, deserunt.",
+		"itemPrice": 12,
+		"itemImage": "imgs/products/spaghetti with stew.png",
+		"remaining": 0
+	},
+	{
+		"itemName": "Samosas",
+		"itemType": "Snack",
+		"itemDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, deserunt.",
+		"itemPrice": 12,
+		"itemImage": "imgs/products/samosas.png",
+		"remaining": 8
+	},
+	{
+		"itemName": "Spicy Pasta",
+		"itemType": "Dish",
+		"itemDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, deserunt.",
+		"itemPrice": 12,
+		"itemImage": "imgs/products/spicy pasta.png",
+		"remaining": 8
+	},
+	{
+		"itemName": "Spicy Spaghetti",
+		"itemType": "Dish",
+		"itemDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, deserunt.",
+		"itemPrice": 12,
+		"itemImage": "imgs/products/spicy spaghetti.png",
+		"remaining": 0
+	},
+	{
+		"itemName": "Sponge Cake",
+		"itemType": "Snack",
+		"itemDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, deserunt.",
+		"itemPrice": 12,
+		"itemImage": "imgs/products/sponge cake.png",
+		"remaining": 4
+	},
+	{
+		"itemName": "Strawberry Sponge Cake",
+		"itemType": "Snack",
+		"itemDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, deserunt.",
+		"itemPrice": 12,
+		"itemImage": "imgs/products/strawberry sponge cake.png",
+		"remaining": 8
+	},
+	{
+		"itemName": "Strawberry Cake",
+		"itemType": "Snack",
+		"itemDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, deserunt.",
+		"itemPrice": 12,
+		"itemImage": "imgs/products/strawberry cake.png",
+		"remaining": 8
+	},
+	{
+		"itemName": "Vietnamese Egg Roll",
+		"itemType": "Snack",
+		"itemDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, deserunt.",
+		"itemPrice": 12,
+		"itemImage": "imgs/products/vietnamese egg roll.png",
+		"remaining": 0
+	}
 ]

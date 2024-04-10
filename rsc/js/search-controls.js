@@ -12,7 +12,7 @@ function searchForItem() {
     const itemToSearch = document.querySelector('[item-search-field]').value;
     const usernameField = document.querySelector('[username-field]');
     const itemField = document.querySelector('[item-field]');
-    const username = document.querySelector('[username]').value;
+    const username = document.querySelector('[username]').innerText;
     const sendButton = document.querySelector('[send-search-button]');
   
     if (!itemToSearch)

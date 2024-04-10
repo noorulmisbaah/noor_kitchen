@@ -6,7 +6,7 @@ const fs = require('fs');
  * @function readJSONFile
  * @param {String} path The path to the file
  * @returns The content of the JSON file
- * @description Reads the content of a JSON file and returns the content of the file. undefined is returned if
+ * @description Reads the content of a JSON file and returns the content of the file. Undefined is returned if
  * either the file path is invalid or the JSON file could not be read.
  * @example
  * var fileContent = readJSONFile(the_file_path); //returns the content of the JSON file
@@ -41,23 +41,45 @@ function writeJSONFile(path, content) {
 /**
  * Creates a directory
  * 
- * @function createDirectory
+ * @function createUserDirectory
  * @param {String} path The path where the directory is to be created
- * @param {String} name Optional JSON filename
  * @param {Object} content The content of the JSON file
- * @description Creates a new directory at the a specified path. The optional second argument specifies the JSON 
- * filename. The third argument specifies the content of the JSON. It has to be of the type 'object'. An error is thrown if something went wrong and the directory is not created.
+ * @description Creates a new directory at the a specified path and a JSON file. An error is thrown if something went wrong and the directory is not created.
  */
-function createDirectory(path, name = '', content) {
+function createUserDirectory(path, content) {
     fs.mkdir(path, (err) => {
         if (err)
             throw new Error(`The directory could not be created at '${path}'.`);
-        if ((name) && (typeof content === 'object'))
-            writeJSONFile(`${path}/${name}.json`, content);
-        else {
+        if (typeof content === 'object') {
+            writeJSONFile(`${path}/user_information.json`, content);
+            writeJSONFile(`${path}/messages.json`, []);
+            writeJSONFile(`${path}/purchases.json`, []);
+            writeJSONFile(`${path}/transactions.json`, []);
+        } else {
             return;
         }
     });
+}
+
+/**
+ * Removes the user directory
+ * 
+ * @function removeUserDirectory
+ * @param {String} path The user directory path
+ * @description Removes the user directory and all it's associated content.
+ */
+function removeUserDirectory(path) {
+    const files = fs.readdirSync(path);
+
+    for (var i = 0; i < files.length; i++) {
+        fs.unlinkSync(`${path}/${files[i]}`);
+    }
+
+    fs.rmdir(path, (err) => {
+        if (err) {
+            throw new Error(`The directory at ${path} could not be removed.`);
+        }
+    })
 }
 
 /**
@@ -67,7 +89,7 @@ function createDirectory(path, name = '', content) {
  * @param {Array} arr 
  * @returns The reversed elements of the array
  * @description Reverses the element of an array. Instead of mutating the original array, a new array is returned
- * containing the elements of the array passed to the function in a reversed way.
+ * containing the elements of the array passed to the function in a reversed order.
  * @example
  * var numbers = [2, 5, 6, 9];
  * var reversed = reverseArrayContent(numbers);
@@ -86,6 +108,7 @@ function reverseArrayContent(arr) {
 module.exports = { 
     readJSONFile,
     writeJSONFile,
-    createDirectory,
+    createUserDirectory,
+    removeUserDirectory,
     reverseArrayContent
 };

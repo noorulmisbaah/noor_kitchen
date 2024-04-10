@@ -116,16 +116,6 @@
     padding: 1rem;
 }
 
-.shopping-cart,
-.item-information {
-    overflow: scroll;
-}
-
-.shopping-cart::-webkit-scrollbar,
-.item-information::-webkit-scrollbar {
-    display: none;
-}
-
 .cart-item {
     display: flex;
     column-gap: 1rem;

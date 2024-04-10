@@ -1,3 +1,9 @@
+/**
+* Author: Aminu Adamu Aminu
+* Copyright 2024
+* All rights reserved.
+*/
+
 @keyframes appear {
     0% {
         opacity: 0;
@@ -45,6 +51,7 @@ input {
     outline: none;
     border: none;
     border-bottom: 1px solid var(--white);
+    border-radius: 0;
     padding: 0.5rem;
     color: var(--white);
     font-family: Poppins, Verdana;
@@ -110,7 +117,8 @@ header .header-icons i,
 .close-comment-section,
 .close-cart-area,
 .close-information,
-.close-side-icon {
+.close-side-icon,
+.close-update-information-form {
     text-align: center;
     width: 2rem;
     height: 2rem;
@@ -133,7 +141,8 @@ header .header-icons .menu-icon,
 .close-comment-section,
 .close-cart-area,
 .close-information,
-.close-side-icon {
+.close-side-icon,
+.close-update-information-form {
     padding: 0.4rem;
     border-radius: 7px;
 }
@@ -164,7 +173,8 @@ header .header-icons i:hover,
 .close-comment-section:hover,
 .close-cart-area:hover,
 .close-information:hover,
-.close-side-icon:hover  {
+.close-side-icon:hover,
+.close-update-information-form:hover {
     background: var(--white);
     color: var(--orange);
 }
@@ -182,6 +192,7 @@ header .header-icons i:hover,
     width: 17rem;
     padding: 0.3rem;
     border: 1px solid var(--orange);
+    font-family: Poppins, Verdana;
     border-radius: 5px;
     outline: none;
     transition: 0.5s ease all;
@@ -216,7 +227,8 @@ header .header-icons i:hover,
 .full-menu,
 .comment-area,
 .shopping-cart,
-.item-information {
+.item-information,
+#update-information-form {
     opacity: 0;
     position: fixed;
     top: 0;
@@ -230,6 +242,17 @@ header .header-icons i:hover,
     justify-content: center;
     transition: 0.5s ease all;
     background: var(--dark-transparent);
+    overflow: scroll;
+}
+
+.items-search::-webkit-scrollbar,
+.sign-in-form::-webkit-scrollbar,
+.full-menu::-webkit-scrollbar,
+.comment-area::-webkit-scrollbar,
+.shopping-cart::-webkit-scrollbar,
+.item-information::-webkit-scrollbar,
+#update-information-form::-webkit-scrollbar {
+    display: none;
 }
 
 .full-menu {
@@ -256,7 +279,8 @@ header .header-icons i:hover,
 .close-search-icon,
 .close-sign-in-form,
 .close-cart-area,
-.close-information {
+.close-information,
+.close-update-information-form {
     position: fixed;
     top: 1rem;
     left: calc(100% - 4rem);

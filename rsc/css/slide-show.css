@@ -6,15 +6,16 @@
     }
 }
 
-.slide-show {
+.slide-show,
+.slide-show-image{
     display: flex;
     gap: 3rem;
     align-items: center;
-    margin: 3rem 0;
 }
 
-.slide-show-image img {
-    width: 18rem;
+.slide-show-image {
+    width: 15rem;
+    justify-content: center
 }
 
 .column {

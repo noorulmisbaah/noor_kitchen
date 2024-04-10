@@ -7,13 +7,22 @@
 
         <!--CSS Files-->
         <link rel="stylesheet" href="css/font-families.css">
+        <link rel="stylesheet" href="notification-box/notification_styles.css">
         <link rel="stylesheet" href="css/index.css">
         <link rel="stylesheet" href="css/css/all.css">
         <link rel="stylesheet" href="css/css/v4-shims.css">
-        <link rel="stylesheet" href="css/administrator.css">
+        <link rel="stylesheet" href="css/dashboard.css">
 
         <!--JS Files-->
-        <script src="js/administrator.js" defer></script>
+        <script src="notification-box/notification_funcs.js" defer></script>
+        <script src="js/jspdf.min.js" defer></script>
+        <script src="js/jspdf.plugin.autotable.min.js" defer></script>
+        <script src="js/logo-uri.js" defer></script>
+        <script src="js/Poppins-Bold-normal.js" defer></script>
+        <script src="js/Poppins-Regular-normal.js" defer></script>
+        <script src="js/receipt-download.js" defer></script>
+        <script src="js/transactions.js" defer></script>
+        <script src="js/dashboard.js" defer></script>
         <script src="js/search-controls.js" defer></script>
     </head>
     <body>
@@ -26,7 +35,7 @@
             <div class="header-icons">
                 <i class="fas fa-bars menu-icon"></i>
                 <span class="fas fa-times close-side-icon"></span>
-                <i class="fas fa-home home-icon"></i>
+                <a href="/"><i class="fas fa-home home-icon"></i></a>
                 <i class="fas fa-search search"></i>
             </div>
         </header>
@@ -69,12 +78,12 @@
             <div class="right-part">
                 <div class="boxes">
                     <div class="box">
-                        <p class="box-title">All Items</p>
-                        <p class="box-description">21</p>
+                        <p class="box-title">Transactions</p>
+                        <p class="box-description"><%= allTransactions.length %></p>
                     </div>
                     <div class="box">
-                        <p class="box-title">All Users</p>
-                        <p class="box-description">11</p>
+                        <p class="box-title">Total Amount</p>
+                        <p class="box-description">$<%= total %></p>
                     </div>
                     <div class="box">
                         <p class="box-title">All Items</p>
@@ -84,54 +93,93 @@
                 <div class="sections">
                     <div class="section">
                         <p class="section-title">Purchases History</p>
-                        <div class="section-area">
-                            <form action="upload_item" method="POST" enctype="multipart/form-data">
-                                <label for="item-name">Item name:</label>
-                                <input type="text" placeholder="Enter the item name..." name="itemName" required>
-                                <label for="item-type">Item type:</label>
-                                <input type="text" placeholder="Enter the item type..." name="itemType" required>
-                                <label for="item-price">Item price</label>
-                                <input type="number" placeholder="Enter the item price..." name="itemPrice" required>
-                                <label for="item-quantity">Item quantity:</label>
-                                <input type="number" placeholder="Enter the item quantity..." name="itemQuantity" required>
-                                <label for="item-image">Item image:</label>
-                                <input type="file" accept=".png, .jpg" readonly>
-                                <button type="submit">Upload</button>
-                            </form>
+                        <div class="section-area purchase-history">
+                            <% if (allTransactions.length > 0) { %>
+                                <table class="table-view" width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th>Transaction ID</th>
+                                            <th>Date</th>
+                                            <th>Amount</th>
+                                            <th>View/Remove</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="transactions-table-body">
+                                        <% allTransactions.forEach(transaction => { %>
+                                            <tr>
+                                                <td class="transaction-id"><%= transaction.transactionId %></td>
+                                                <td class="center-align"><%= transaction.transactionDate %></td>
+                                                <td class="center-align">$<%= transaction.amount %></td>
+                                                <td class="center-align" <%= "id=" + `${transaction.transactionId}` %>>
+                                                    <button class="view-transaction-button">View</button>
+                                                    <button class="remove-transaction-button">Remove</button>
+                                                </td>
+                                            </tr>
+                                        <% }) %>
+                                    </tbody>
+                                </table>
+                                <div class="box-view">
+                                    <% allTransactions.forEach(transaction => { %>
+                                        <div class="transaction-details">
+                                            <p>Transaction ID: <span class="transaction-id"><%= transaction.transactionId %></span></p>
+                                            <p>Date: <% transaction.transactionDate %></p>
+                                            <p>Amount: $<%= transaction.amount %></p>
+                                            <div style="margin-top: 1rem;" <%= "id=" + `${transaction.transactionId}` %>>
+                                                <button class="view-transaction-button">View</button>
+                                                <button class="remove-transaction-button">Remove</button>
+                                            </div>
+                                        </div>
+                                    <% }) %>
+                                </div>
+                            <% } else { %>
+                                <p>No purchases to show.</p>
+                            <% } %>
                         </div>
                     </div>
                     <div class="section">
                         <p class="section-title">Manage Account</p>
-                        <div class="section-area">
-                            <form action="update_item_information" method="POST" enctype="multipart/form-data">
-                                <label for="item-name">Item old name:</label>
-                                <input type="text" placeholder="Enter the item name..." name="itemOldName" required>
-                                <label for="item-type">Item new name:</label>
-                                <input type="text" placeholder="Enter the item type..." name="itemNewType" required>
-                                <label for="item-price">Item price</label>
-                                <input type="number" placeholder="Enter the item price..." name="itemPrice">
-                                <label for="item-quantity">Item quantity:</label>
-                                <input type="number" placeholder="Enter the item quantity..." name="itemQuantity">
-                                <label for="item-image">Item image:</label>
-                                <input type="file" accept=".png, .jpg">
-                                <button type="submit">Update</button>
-                            </form>
+                        <div class="section-area user-information">
+                            <div>
+                                <p>Username: <%= username %></p>
+                                <p>Email: <%= email %></p>
+                            </div>
+                            <div>
+                                <button id="make-update-button">Update Information</button>
+                                <div id="update-information-form">
+                                    <i class="fas fa-times close-update-information-form"></i>
+                                    <p class="section-title">Update Account Information</p>
+                                    <input new-username-field type="text" placeholder="New username...">
+                                    <input new-email-field type="email" placeholder="New email...">
+                                    <input old-password-field type="password" placeholder="Old password...">
+                                    <input new-password-field type="password" placeholder="New password...">
+                                    <button id="update-account-button">Update</button>
+                                    <button id="delete-account-button">Delete Account</button>
+                                    <form action="/" method="GET">
+                                        <button return-home type="submit" hidden></button>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="section">
-                        <p class="section-title">Shopping Area</p>
-                        <div class="section-area">
-                            <form action="remove_item" method="POST" enctype="multipart/form-data">
-                                <label for="item-name">Item name:</label>
-                                <input type="text" placeholder="Enter the item name..." name="itemOldName" required>
-                                <button type="submit">Remove</button>
-                            </form>
-                        </div>
+                        <form action="/shopping" method="POST" hidden>
+                            <input type="text" user-input-field name="username">
+                            <button submit-username-button type="submit"></button>
+                        </form>
                     </div>
                     <div class="section">
                         <p class="section-title">Messages</p>
-                        <div class="section-area">
-
+                        <div class="section-area messages">
+                            <% if (messages.length > 0) {
+                                messages.forEach(message => { %>
+                                    <div class="message">
+                                        <p class="message-date"><%= message.date %></p>
+                                        <p class="message-content"><%= message.message %></p>
+                                    </div>
+                                <% }) 
+                            }  else { %>
+                                <p>No messages to show.</p>
+                            <% } %>
                         </div>
                     </div>
                 </div>

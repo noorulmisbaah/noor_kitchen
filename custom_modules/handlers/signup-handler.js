@@ -11,7 +11,7 @@ function createUserAccount(req, res) {
         else {
             fileContent[fileContent.length] = { username, password, email };
             utils.writeJSONFile('./users/users.json', fileContent);
-            utils.createDirectory(`./users/${username}`, username, { username, password, email });
+            utils.createUserDirectory(`./users/${username}`, { username, password, email });
             res.send(JSON.stringify({ created: true }));
         }
     } else {

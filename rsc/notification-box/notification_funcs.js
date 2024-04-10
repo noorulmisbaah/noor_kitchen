@@ -2,9 +2,8 @@
  * Project Name: Notification Box
  * Author: Aminu Adamu Aminu
  * Version: 1.3.0
- * Last Updated: 18th January, 2024 
  * 
- * Copyright 2023 Noorul Misbah
+ * Copyright 2024 Aminu Adamu Aminu
  */
 
 /**
@@ -70,7 +69,6 @@ function showConfirmationBox(title, content, func) {
     acceptButton.style.display = rejectButton.style.display = 'inline';
     boxTitle.innerText = title || 'Notification';
     boxContent.innerText = content || '';
-
 
     acceptButton.addEventListener('click', () => {
         func();

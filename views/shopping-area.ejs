@@ -20,7 +20,7 @@
         <script src="js/Poppins-Regular-normal.js" defer></script>
         <script src="js/search-controls.js" defer></script>
         <script src="js/shopping-area.js" defer></script>
-        <script src="js/reciept-download.js" defer></script>
+        <script src="js/receipt-download.js" defer></script>
         <script src="notification-box/notification_funcs.js" defer></script>
     </head>
     <body>
@@ -95,6 +95,7 @@
                 
             </div>
             <form action="shopping" method="POST" hidden>
+                <input type="text" name="username" username-input-field>
                 <input type="text" name="page" page-field>
                 <button type="submit" submit-page-number></button>
             </form>

@@ -104,7 +104,7 @@ function assignEventListener() {
   if (cartItems.length > 0) {
     proceedButton = document.querySelector('.proceed');
     proceedButton.addEventListener('click', () => {
-      downloadReceipt();
+      makePurchase(cartItems);
     });
   }
 
@@ -168,7 +168,7 @@ function showItemInformation(currentItem, index) {
           <p class="item-title">${currentItem.querySelector('[item-name]').innerText}</p>
       </div>
       <div class="info">
-          <p>Item price: ${currentItem.querySelector('[item-price]').innerText}</p>
+          <p>Item price: $${currentItem.querySelector('[item-price]').innerText}</p>
           <p>Item availability: ${currentItem.querySelector('[item-remaining]').innerText !== '0' ? 'Available' : 'Unavailable'}</p>
           <p>${currentItem.querySelector('[item-remaining]').innerText !== '0' ?
           'Remaining: ' + currentItem.querySelector('[item-remaining]').innerText : 'This item is currently unvailable.'}</p>
@@ -190,7 +190,7 @@ function displayPageNumbers() {
     pageNumberButtons[i].setAttribute('class', 'page-number');
     pageNumberButtons[i].addEventListener('click', (e) => {
       sendPageNumber(e.target.innerText);
-    })
+    });
 
     if (i === currentPage) {
       pageNumberButtons[i].classList.add('current-page');
@@ -202,9 +202,11 @@ function displayPageNumbers() {
 
 function sendPageNumber(number) {
   const pageNumberInput = document.querySelector('[page-field]');
+  const usernameField = document.querySelector('[username-input-field]');
   const submitPageNumberButton = document.querySelector('[submit-page-number]');
 
   pageNumberInput.value = number;
+  usernameField.value = customerName;
   submitPageNumberButton.click();
 }
 
@@ -230,6 +232,7 @@ const dashboardButton = document.querySelector('.dashboard-button');
 const pageNumbersArea = document.querySelector('.page-numbers');
 const currentPage = Number(document.querySelector('[page]').innerText);
 const numberOfPages = Number(document.querySelector('[pages]').innerText);
+
 var removeItemIcons = [];
 var increaseButtons = [];
 var decreaseButtons = [];

@@ -1,4 +1,5 @@
 const { readJSONFile } = require('./utils');
+const fs = require('fs');
 
 function renderShoppingArea(req, res) {
     const currentUser = req.body.username;
@@ -6,6 +7,11 @@ function renderShoppingArea(req, res) {
     const fileContent = readJSONFile('./products/products.json');
     const numberOfPages = Math.ceil(fileContent.length / 8);
     var displayItems = [];
+
+    if (!fs.existsSync(`./users/${currentUser}`)) {
+        res.redirect('/');
+        return;
+    }
 
     if (pageNumber) {
         displayItems = arrangeDisplayItems(fileContent, pageNumber);

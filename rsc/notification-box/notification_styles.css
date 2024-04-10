@@ -67,7 +67,7 @@
 
 @media screen and (max-width: 1080px) {
     #notification-box-container {
-        padding: 2rem 5rem;
+        padding: 1rem 5rem;
     }
 
     .box-title {
@@ -77,7 +77,7 @@
 
 @media screen and (max-width: 800px) {
     #notification-box-container {
-        padding: 2rem 2.5rem;
+        padding: 1rem 2.5rem;
     }
 
     .box-title {
@@ -113,7 +113,7 @@
     }
 
     .box-button {
-        width: 4rem;
+        width: 3rem;
     }
 }
 

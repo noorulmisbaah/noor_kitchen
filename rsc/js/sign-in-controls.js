@@ -56,7 +56,7 @@ function signIn() {
         .then(res => res.json())
         .then(({ found }) => {
             if (!found)
-                showNotificationBox('Error', "Sorry, we couldn't sign you in because either your username or password is incorrect.");
+                showNotificationBox('Sign in Failed', "Sorry, we couldn't sign you in because either your username or password is incorrect.");
             else {
                 formInput.value = username;
                 formButton.click();
