@@ -2,11 +2,11 @@ const util = require('./utils');
 const fs = require('fs');
 
 function renderCustomerPage(req, res) {
-    if (!(fs.existsSync(`./users/${req.body.username}`))) {
+    if (!util.readJSONFile('./users/users.json').some(user => user.username === req.body.username)) {
         res.redirect('/');
         return;
     }
-    
+
     const { username, email } = util.readJSONFile(`./users/${req.body.username}/user_information.json`);
     const messages = util.reverseArrayContent(util.readJSONFile(`./users/${username}/messages.json`));
     const allTransactions = util.reverseArrayContent(util.readJSONFile(`./users/${username}/transactions.json`));
